@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.scss';
 import {Route, Routes} from "react-router-dom";
+import Authentication from './Components/Authentication/Authentication';
 
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<h1>Auth</h1>}/>
+            <Route path="/" element={<Authentication/>}/>
             <Route></Route>
             <Route></Route>
             <Route path="*" element={<h1>Not found</h1>}></Route>
