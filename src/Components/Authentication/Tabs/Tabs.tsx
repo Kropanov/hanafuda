@@ -3,6 +3,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import classes from './Tabs.module.scss'
+import Authorization from "../Authorization/Authorization";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -45,7 +47,7 @@ export default function BasicTabs() {
     };
 
     return (
-        <Box sx={{ width: '500px', height: '500px', margin: '0 auto', border: 1, borderColor: 'divider' }}>
+        <Box className={classes.tabsContainer} sx={{ border: 1, borderColor: 'divider' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                     <Tab label="Авторизация" {...a11yProps(0)} />
@@ -53,7 +55,7 @@ export default function BasicTabs() {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                Авторизация
+                <Authorization/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Регистрация
