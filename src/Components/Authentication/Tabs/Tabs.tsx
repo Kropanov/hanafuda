@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import classes from './Tabs.module.scss'
 import Authorization from "../Authorization/Authorization";
+import {Props} from "../../Types/Types";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -39,7 +40,7 @@ function a11yProps(index: number) {
     };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs(props: Props) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -55,7 +56,7 @@ export default function BasicTabs() {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <Authorization/>
+                <Authorization path={props.path} setPath={props.setPath}/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Регистрация
