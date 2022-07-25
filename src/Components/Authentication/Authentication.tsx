@@ -1,13 +1,12 @@
 import Box from '@mui/material/Box';
-import React, {useState} from 'react';
+import React from 'react';
 import Tabs from "./Tabs/Tabs";
 import classes from './Authentication.module.scss'
-import {Props} from "../Types/Types";
 
-function Authentication(props: Props) {
+function Authentication() {
     return (
         <Box className={classes.Authentication}>
-            <Tabs path={props.path} setPath={props.setPath}/>
+            <Tabs/>
         </Box>
     )
 }
