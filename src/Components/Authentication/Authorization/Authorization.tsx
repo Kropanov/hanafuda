@@ -3,9 +3,10 @@ import React from 'react';
 import {Button, IconButton, InputAdornment, OutlinedInput, TextField} from "@mui/material";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import {useRouter} from "../../../Hooks/Router/Router";
 
 const Authorization = () => {
-
+    const router = useRouter();
     const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
     const handleClickShowPassword = () => {
@@ -18,6 +19,7 @@ const Authorization = () => {
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         console.log('This thing was submitted!');
+        router.push('/menu');
         e.preventDefault();
     }
 
